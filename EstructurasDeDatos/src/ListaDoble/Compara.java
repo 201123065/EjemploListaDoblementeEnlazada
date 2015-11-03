@@ -1,5 +1,5 @@
 
-package ListaDoblementeEnlazada;
+package ListaDoble;
 public class Compara {
     
      private String textoAEntero(String cadena){

@@ -1,6 +1,6 @@
 
 
-package ListaDoblementeEnlazada;
+package ListaDoble;
 
 import javax.swing.JOptionPane;
 

@@ -3,7 +3,10 @@ TEXTO A NUMERO
 */
 
 
-package ListaDoblementeEnlazada;
+package ListaDoble;
+
+import ListaDoble.Nodo;
+import ListaDoble.Compara;
 
 public class converter {
     
