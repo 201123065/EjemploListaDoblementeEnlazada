@@ -94,4 +94,14 @@ public class converter {
         return inicio;
     }
     
+    public String Listado(){
+        String retorno ="";
+        Nodo temporal=inicio;
+        while(temporal!=null){
+            retorno = (retorno.equals(""))?temporal.Cadena:retorno+"\n"+temporal.Cadena;
+            temporal=temporal.derecha;
+        }
+        return retorno;
+    }
+    
 }

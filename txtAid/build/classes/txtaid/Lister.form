@@ -33,7 +33,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="Eliminar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="ver" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -42,7 +42,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="prev" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton6" max="32767" attributes="0"/>
+                                  <Component id="Info" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="sig" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
@@ -71,7 +71,7 @@
                   <Component id="btnCargar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Modificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ver" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="View" min="-2" max="-2" attributes="0"/>
@@ -79,7 +79,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="prev" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="sig" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Info" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -144,18 +144,21 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EliminarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="Info">
       <Properties>
         <Property name="text" type="java.lang.String" value="Info"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InfoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="ver">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver todo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

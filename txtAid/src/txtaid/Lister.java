@@ -27,8 +27,8 @@ public class Lister extends javax.swing.JFrame {
         btnCargar = new javax.swing.JButton();
         Modificar = new javax.swing.JButton();
         Eliminar = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Info = new javax.swing.JButton();
+        ver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,14 +74,19 @@ public class Lister extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Info");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        Info.setText("Info");
+        Info.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                InfoActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Ver todo");
+        ver.setText("Ver todo");
+        ver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,7 +102,7 @@ public class Lister extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Eliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(ver))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -105,7 +110,7 @@ public class Lister extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(prev, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(sig, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -126,14 +131,14 @@ public class Lister extends javax.swing.JFrame {
                     .addComponent(btnCargar)
                     .addComponent(Modificar)
                     .addComponent(Eliminar)
-                    .addComponent(jButton1))
+                    .addComponent(ver))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prev)
                     .addComponent(sig)
-                    .addComponent(jButton6))
+                    .addComponent(Info))
                 .addContainerGap())
         );
 
@@ -155,11 +160,11 @@ public class Lister extends javax.swing.JFrame {
         View.setText(muestra.Cadena);
     }//GEN-LAST:event_sigActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoActionPerformed
         Vista op = new Vista();
         op.setLocationRelativeTo(null);
         op.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_InfoActionPerformed
 
     private void prevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevActionPerformed
         muestra=(muestra.izquierda!=null)?muestra.izquierda:muestra;
@@ -189,11 +194,11 @@ public class Lister extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
-        boolean ans= c.Eliminar(View.getText());
-        String eliminado=(ans)?
-                "eliminado correctamente":
+        boolean ans= c.modificar(View.getText(),TFLoader.getText());
+        String modificado=(ans)?
+                "se modifico de "+View.getText()+" a "+TFLoader.getText():
                 "el archivo no se ha encontrado";
-            JOptionPane.showMessageDialog(this, eliminado);
+            JOptionPane.showMessageDialog(this, modificado);
         if(ans){
             if(muestra.derecha!=null){
                 muestra=muestra.derecha;
@@ -211,6 +216,13 @@ public class Lister extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_ModificarActionPerformed
+
+    private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
+        ver op = new ver();
+        op.setVista(c.Listado());
+        op.setLocationRelativeTo(null);
+        op.setVisible(true);
+    }//GEN-LAST:event_verActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,14 +261,14 @@ public class Lister extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Eliminar;
+    private javax.swing.JButton Info;
     private javax.swing.JButton Modificar;
     private javax.swing.JTextField TFLoader;
     private javax.swing.JTextField View;
     private javax.swing.JButton btnCargar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton prev;
     private javax.swing.JButton sig;
+    private javax.swing.JButton ver;
     // End of variables declaration//GEN-END:variables
 }
